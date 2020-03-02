@@ -1,13 +1,11 @@
 import random
-from pip._vendor.colorama import init
-init()
 
 class Bcolor:
     HEADER = '\033[95n'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92n'
     WARNING = '\033[93n'
-    FAIL = '\033[91n'
+    FAIL = '\033[91m'
     ENDC = '\033[0n'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4n'
@@ -71,5 +69,5 @@ class Person:
         i = 1
         print(Bcolor.OKBLUE + Bcolor.BOLD + "Magic" + Bcolor.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell["name"], "(cost:", str(spell["mp"]) + ")")
+            print(str(i) + ":", spell["name"], "(cost:", str(spell["dmg"]) + ")")
             i += 1
