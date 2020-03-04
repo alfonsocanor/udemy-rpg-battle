@@ -1,6 +1,6 @@
 from classes.game import Person, Bcolor
-from pip._vendor.colorama import init
-init()
+from pip._vendor.colorama import  init, Fore, Back, Style
+init(convert=True)
 
 magic = [{"name":"Fire", "cost": 10, "dmg": 100},
          {"name":"Thunder", "cost": 10, "dmg": 120},
@@ -27,7 +27,7 @@ while running:
     if index == 1:
         print("==========================")
         player.choose_magic()
-        magic_choice = int(input("Choose magic: ")-1)
+        magic_choice = int(input("Choose magic: "))-1
         spell = player.get_spell_name(magic_choice)
         cost = player.get_spell_mp_cost(magic_choice)
 
@@ -47,7 +47,7 @@ while running:
 
     enemy_dmg = enemy.generate_damage()
     player.take_damage(enemy_dmg)
-    print("Enemy attacks for", dmg, "Player HP:", player.get_hp())
+    print("Enemy attacks for", enemy_dmg, "Player HP:", player.get_hp())
 
     print("--------------------------")
 
@@ -58,6 +58,6 @@ while running:
         print(Bcolor.FAIL + "Your enemy has defeated you!" + Bcolor.ENDC)
         running = False
    
-    print("Enemy HP:", Bcolor.FAIL + str(enemy.hp) + "/" + str(enemy.get_max_hp) + Bcolor.ENDC)
-    print("Your HP:", Bcolor.OKGREEN + str(player.hp) + "/" + str(player.get_max_hp) + Bcolor.ENDC)
-    print("Your MP:", Bcolor.OKBLUE + str(player.mp) + "/" + str(player.get_max_mp)+ Bcolor.ENDC)
+    print("Enemy HP:", Bcolor.FAIL + str(enemy.get_hp()) + "/" + str(enemy.get_max_hp()) + Bcolor.ENDC)
+    print("Your HP:", Bcolor.OKGREEN + str(player.get_hp()) + "/" + str(player.get_max_hp()) + Bcolor.ENDC)
+    print("Your MP:", Bcolor.OKBLUE + str(player.get_hp()) + "/" + str(player.get_max_mp())+ Bcolor.ENDC)

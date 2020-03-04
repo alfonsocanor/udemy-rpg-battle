@@ -1,13 +1,15 @@
 import random
+from pip._vendor.colorama import  init, Fore, Back, Style
+init(convert=True)
 
 class Bcolor:
     HEADER = '\033[95n'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92n'
-    WARNING = '\033[93n'
-    FAIL = '\033[91m'
-    ENDC = '\033[0n'
-    BOLD = '\033[1m'
+    OKBLUE = Fore.BLUE
+    OKGREEN = Fore.GREEN
+    WARNING = Fore.YELLOW
+    FAIL = Fore.RED
+    ENDC = Fore.RESET
+    BOLD = Style.NORMAL
     UNDERLINE = '\033[4n'
 
 
